@@ -53,8 +53,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
       pageRoute={pageMeta.path}
       pageParams={pageMeta.params}
     >
-      <Analytics/>
       <PlasmicComponent component={pageMeta.displayName} />
+      <Analytics/>
     </PlasmicRootProvider>
   );
   // Use revalidate if you want incremental static regeneration
