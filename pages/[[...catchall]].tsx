@@ -6,6 +6,7 @@ import {
   PlasmicRootProvider,
 } from "@plasmicapp/loader-nextjs";
 import type { GetStaticPaths, GetStaticProps } from "next";
+import { Analytics } from "@vercel/analytics/react"
 
 import Error from "next/error";
 import { useRouter } from "next/router";
@@ -52,6 +53,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       pageRoute={pageMeta.path}
       pageParams={pageMeta.params}
     >
+      <Analytics/>
       <PlasmicComponent component={pageMeta.displayName} />
     </PlasmicRootProvider>
   );
